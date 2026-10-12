@@ -27,6 +27,7 @@ struct GeneralPane: View {
             }
             SettingsRow("Full screen") {
                 Toggle("Hide the notch in full-screen apps", isOn: $hidesInFullScreen)
+                    .fixedSize()
             }
             SettingsRow("Open on hover") {
                 HStack(spacing: 10) {

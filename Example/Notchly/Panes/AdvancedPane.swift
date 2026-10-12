@@ -54,6 +54,8 @@ struct AdvancedPane: View {
                         Button("Export Settings…") { exportSettings() }
                         Button("Import Settings…") { importSettings() }
                     }
+                    // Both buttons keep their full titles; the form grows to fit them.
+                    .fixedSize()
                 }
             } footer: {
                 Text("A property list with every Notchly setting, to move them to another Mac.")

@@ -47,7 +47,9 @@ struct NotchlySettings: View {
         SettingsPaneView(
             style: screenshot?.style ?? style,
             defaultPane: screenshot?.pane,
-            persistence: screenshot == nil ? PanePersistence(key: "Notchly.lastSettingsPane") : nil
+            persistence: screenshot == nil ? PanePersistence(key: "Notchly.lastSettingsPane") : nil,
+            // Tall enough in the sidebar style for the longest pane, Accounts, to fit without scrolling.
+            layout: SettingsPaneLayout(sidebarWindowSize: CGSize(width: 720, height: 590))
         ) {
             Pane("General", systemImage: "gearshape", tint: .gray) {
                 GeneralPane()
