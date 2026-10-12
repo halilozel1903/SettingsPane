@@ -1,0 +1,35 @@
+name: SettingsPaneDemo
+options:
+  bundleIdPrefix: io.github.halilozel1903
+  deploymentTarget:
+    macOS: "14.0"
+packages:
+  SettingsPane:
+    path: ..
+targets:
+  SettingsPaneDemo:
+    type: application
+    platform: macOS
+    sources:
+      - Notchly
+    dependencies:
+      - package: SettingsPane
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: io.github.halilozel1903.SettingsPaneDemo
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Notchly
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.utilities
+        INFOPLIST_KEY_NSHumanReadableCopyright: "© 2026 Halil Özel"
+        MARKETING_VERSION: "1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        SWIFT_VERSION: "6.0"
+        ENABLE_HARDENED_RUNTIME: NO
+        CODE_SIGN_IDENTITY: "-"
+schemes:
+  SettingsPaneDemo:
+    build:
+      targets:
+        SettingsPaneDemo: all
+    run:
+      config: Debug
